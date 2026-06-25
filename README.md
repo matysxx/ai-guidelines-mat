@@ -47,6 +47,16 @@ ai-guidelines/
 └── README.md
 ```
 
+## Attribution
+
+This repository is a fork of the original project created by Jurand Antoś:
+https://github.com/jurand-antos/ai-guidelines
+
+The original work is licensed under the MIT License. Copyright and license
+notices are preserved in the LICENSE file.
+
+Modifications in this fork are maintained by Piotr Matysek / matysxx.
+
 ## License
 
 MIT License — see LICENSE file for details.
