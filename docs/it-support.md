@@ -109,8 +109,8 @@ it-support/
 │       ├── tech-spec.md
 │       └── environments.md
 ├── prd/
-    ├── requirements-template.md
-    └── task-index-template.md
+│   ├── requirements-template.md
+│   └── task-index-template.md
 └── wiki/
     ├── README.md
     ├── context-policy.md

@@ -6,7 +6,7 @@ A collection of reusable, portable instruction packs for AI agents. Each top-lev
 
 | Category | Description | Docs |
 |----------|-------------|------|
-| `it-support/` | Role-based instructions for AI coding agents | [docs/it-support.md](docs/it-support.md) |
+| `it-support/` | Role-based instructions for AI coding agents, with local task context management | [docs/it-support.md](docs/it-support.md) |
 
 ## Quick Start
 
@@ -34,6 +34,18 @@ bin/install.sh it-support ../my-project/.ai  # relative path to another project
 ```
 
 The script copies the category's subdirectories directly into the target. Running it again upgrades the files while preserving your `prd/prd.md` and local `wiki/tasks/` context entries.
+
+## Task Wiki and Context Management
+
+The `it-support` category includes a local-only task wiki for agent context exchange:
+
+- `wiki/tasks/{PROJECT_KEY}-{N}/summary.md` — compact task state
+- `wiki/tasks/{PROJECT_KEY}-{N}/handoff.md` — role-to-role handoff notes
+- `wiki/tasks/{PROJECT_KEY}-{N}/observations.md` — important task events
+- `wiki/tasks/{PROJECT_KEY}-{N}/reflection.md` — compressed conclusions
+- `wiki/tasks/{PROJECT_KEY}-{N}/heartbeat.md` — current checkpoint, blockers, and next action
+
+Task wiki entries are operational memory and should stay local. The init instructions add `.ai/wiki/tasks/` to `.gitignore`, and the installer preserves existing task context during upgrades.
 
 ## Repository Structure
 
