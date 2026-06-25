@@ -10,6 +10,7 @@ Role-based instructions for AI coding agents — covers design, implementation, 
 | `flows/` | Multi-role workflows for end-to-end scenarios |
 | `meta/` | Setup, discovery, and audit tools |
 | `prd/` | Task tracking templates |
+| `wiki/` | Local-only task context exchange templates |
 
 ## Roles
 
@@ -25,6 +26,12 @@ Role-based instructions for AI coding agents — covers design, implementation, 
 - `task-continuation.md` — continue existing task from where it left off
 - `bugfix.md` — bug investigation → fix → commit
 
+## Task Wiki
+
+The `wiki/` directory provides a local-only context exchange layer for agents working across roles. Installed projects use `.ai/wiki/tasks/{PROJECT_KEY}-{N}/` for concise summaries, observations, reflections, heartbeat checkpoints, decisions, artifact links, and handoff notes.
+
+Task wiki entries are operational memory and must not be committed. The installer preserves existing `.ai/wiki/tasks/` entries during upgrades.
+
 ## Install
 
 ```bash
@@ -39,6 +46,7 @@ cp -r it-support/roles/ .ai/roles/
 cp -r it-support/flows/ .ai/flows/
 cp -r it-support/meta/  .ai/meta/
 cp -r it-support/prd/   .ai/prd/
+cp -r it-support/wiki/  .ai/wiki/
 ```
 
 ## After Install
@@ -100,7 +108,16 @@ it-support/
 │       ├── context.md
 │       ├── tech-spec.md
 │       └── environments.md
-└── prd/
+├── prd/
     ├── requirements-template.md
     └── task-index-template.md
+└── wiki/
+    ├── README.md
+    ├── context-policy.md
+    ├── task-summary-template.md
+    ├── observations-template.md
+    ├── reflection-template.md
+    ├── heartbeat-template.md
+    └── tasks/
+        └── .gitkeep
 ```

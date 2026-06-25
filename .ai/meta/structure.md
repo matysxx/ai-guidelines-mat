@@ -47,13 +47,23 @@ it-support/
     requirements-template.md
     task-index-template.md
     ...
+  wiki/
+    README.md
+    context-policy.md
+    task-summary-template.md
+    observations-template.md
+    reflection-template.md
+    heartbeat-template.md
+    tasks/
+      .gitkeep               # Template placeholder only; installed task entries are local-only
+    ...
 
 # Tooling
 bin/
   install.sh                 # Category installer
 ```
 
-Each category defines its own internal structure. The `it-support` example above uses roles/flows/meta/prd, but future categories may organize differently.
+Each category defines its own internal structure. The `it-support` example above uses roles/flows/meta/prd/wiki, but future categories may organize differently.
 
 ## Naming Conventions
 

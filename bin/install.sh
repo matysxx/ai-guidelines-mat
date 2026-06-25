@@ -76,6 +76,20 @@ for subdir in "$CATEGORY_DIR"/*/; do
     if [[ -n "$PRD_BACKUP" ]]; then
       mv "$PRD_BACKUP" "$TARGET/prd/prd.md"
     fi
+  elif [[ "$local_name" == "wiki" ]]; then
+    WIKI_TASKS_BACKUP=""
+    if [[ -d "$TARGET/wiki/tasks" ]]; then
+      WIKI_TASKS_BACKUP="$(mktemp -d)"
+      cp -R "$TARGET/wiki/tasks/." "$WIKI_TASKS_BACKUP/"
+    fi
+    rm -rf "$TARGET/wiki"
+    mkdir -p "$TARGET/wiki"
+    cp -R "$subdir"/. "$TARGET/wiki/"
+    mkdir -p "$TARGET/wiki/tasks"
+    if [[ -n "$WIKI_TASKS_BACKUP" ]]; then
+      cp -R "$WIKI_TASKS_BACKUP/." "$TARGET/wiki/tasks/"
+      rm -rf "$WIKI_TASKS_BACKUP"
+    fi
   else
     rm -rf "$TARGET/$local_name"
     cp -r "$subdir" "$TARGET/$local_name"
