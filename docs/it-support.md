@@ -30,7 +30,11 @@ Role-based instructions for AI coding agents — covers design, implementation, 
 
 The `wiki/` directory provides a local-only context exchange layer for agents working across roles. Installed projects use `.ai/wiki/tasks/{PROJECT_KEY}-{N}/` for concise summaries, observations, reflections, heartbeat checkpoints, decisions, artifact links, and handoff notes.
 
-Task wiki entries are operational memory and must not be committed. The installer preserves existing `.ai/wiki/tasks/` entries during upgrades.
+Task wiki entries are operational memory and must not be committed. Commit only reusable wiki policy and templates, not `.ai/wiki/tasks/**`. The installer preserves existing `.ai/wiki/tasks/` entries during upgrades.
+
+Rule of thumb:
+- GitHub: procedures, role instructions, flow definitions, policies, templates
+- Local-only: session memory, heartbeat, observations, handoff, task status, deployment details
 
 ## Install
 

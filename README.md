@@ -47,6 +47,8 @@ The `it-support` category includes a local-only task wiki for agent context exch
 
 Task wiki entries are operational memory and should stay local. The init instructions add `.ai/wiki/tasks/` to `.gitignore`, and the installer preserves existing task context during upgrades.
 
+Commit reusable procedure and templates to GitHub. Keep session memory, heartbeat, observations, handoffs, task status, and deployment-specific details local-only.
+
 ## Repository Structure
 
 ```

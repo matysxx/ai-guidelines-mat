@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Updated `bin/install.sh` to preserve existing `wiki/tasks/` entries during category upgrades
 - Updated flows and roles to read minimal task context and reflect observations at handoff points
+- Clarified the boundary between committed procedure/templates and local-only operational memory
 
 ## [0.1.2] - 2026-02-16
 

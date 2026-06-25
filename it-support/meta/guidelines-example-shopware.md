@@ -68,5 +68,6 @@ When debugging or verifying deployments, read:
 - **Do not modify portable files** in `roles/` or `meta/` — they are shared across projects.
 - **Project-specific content** goes in `project/` and `prd/` only.
 - **Task wiki entries** in `wiki/tasks/` are local operational memory and must not be committed.
+- **GitHub stores procedure and templates**; local-only files store session memory, heartbeat, observations, handoffs, status, and deployment details.
 - **Always ask before** making assumptions that could change scope.
 - **Follow the tech-spec** — use the project's tools, not your defaults.

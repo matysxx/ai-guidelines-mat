@@ -14,6 +14,26 @@ Use three lightweight mechanisms:
 
 The task wiki is not a chat log. It is a compact operational memory.
 
+## Procedure vs Operational Memory
+
+Separate reusable procedure from local task memory:
+
+**Safe for GitHub:**
+- `wiki/README.md`
+- `wiki/context-policy.md`
+- `wiki/*-template.md`
+- Generic changes in `flows/`, `roles/`, and `meta/`
+- Sanitized project instructions in `project/` only when they contain no host-local or sensitive runtime data
+
+**Local-only:**
+- `wiki/tasks/**`
+- Task-specific `summary.md`, `observations.md`, `heartbeat.md`, `reflection.md`, `handoff.md`, `decisions.md`, and `artifacts.md`
+- Session snapshots and current deployment/task state
+- Local status files such as `prd/task-status.local.md`
+- Private IPs, customer names, hostnames, service maps, credentials, certificates, logs, command output, and host-local configuration
+
+In short: GitHub stores procedure and templates. Local-only files store session memory, task state, heartbeat, observations, handoffs, and deployment details.
+
 ## Read Policy
 
 Agents must read the smallest useful context set:
@@ -77,4 +97,3 @@ When observations have been reflected into `summary.md` or `reflection.md`, trea
 - What is the next concrete step?
 
 Keep it short and update it more often than `summary.md`.
-
