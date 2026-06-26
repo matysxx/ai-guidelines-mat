@@ -17,6 +17,8 @@ var/
 .ai/mcp/
 .ai/config.toml
 .ai/settings.local.json
+.ai/wiki/tasks/
+.ai/prd/task-status.local.md
 .claude
 .codex
 .junie

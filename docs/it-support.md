@@ -36,6 +36,8 @@ Rule of thumb:
 - GitHub: procedures, role instructions, flow definitions, policies, templates
 - Local-only: session memory, heartbeat, observations, handoff, task status, deployment details
 
+Before ending any task, agents must perform a local context dump even if the user does not explicitly ask for it. The dump updates the task's `summary.md`, `heartbeat.md`, `handoff.md`, and `observations.md`, and updates `reflection.md` when a meaningful phase completes or context needs compression. If no task key is known, agents create or reuse a local key such as `wiki/tasks/{PROJECT_KEY}-context-snapshot/`.
+
 ## Install
 
 ```bash

@@ -59,6 +59,37 @@ Agents should write only durable, useful context:
 
 Do not store raw transcripts, full command output, large diffs, secrets, credentials, or sensitive data.
 
+## Mandatory Final Context Dump
+
+Before ending any task, every agent must update the local task wiki. This is mandatory even if the user does not explicitly ask for it.
+
+If a task key is known, update:
+
+- `wiki/tasks/{TASK_KEY}/summary.md`
+- `wiki/tasks/{TASK_KEY}/heartbeat.md`
+- `wiki/tasks/{TASK_KEY}/handoff.md`
+- `wiki/tasks/{TASK_KEY}/observations.md`
+
+When a meaningful phase completed, context grew, or the next agent needs compressed reasoning, also update:
+
+- `wiki/tasks/{TASK_KEY}/reflection.md`
+
+If no task key is known, create or reuse a reasonable local task key, for example:
+
+- `wiki/tasks/{PROJECT_KEY}-context-snapshot/`
+
+The final context dump must include:
+
+- Current status
+- What changed
+- Files touched or relevant artifacts
+- Decisions made
+- Blockers and assumptions
+- Next recommended action
+- Handoff notes for the next agent
+
+Never commit `wiki/tasks/**`. It is local-only operational memory.
+
 ## Compression Policy
 
 Run reflection when any of these conditions is true:

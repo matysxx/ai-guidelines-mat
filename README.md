@@ -49,6 +49,8 @@ Task wiki entries are operational memory and should stay local. The init instruc
 
 Commit reusable procedure and templates to GitHub. Keep session memory, heartbeat, observations, handoffs, task status, and deployment-specific details local-only.
 
+Before ending any task, agents must perform a local context dump even if the user does not explicitly ask for it. The dump updates `wiki/tasks/{TASK_KEY}/summary.md`, `heartbeat.md`, `handoff.md`, and `observations.md`; it also updates `reflection.md` when a meaningful phase completes or context needs compression. If no task key is known, agents create or reuse a local key such as `wiki/tasks/{PROJECT_KEY}-context-snapshot/`.
+
 ## Repository Structure
 
 ```
